@@ -1,0 +1,15 @@
+
+W
+java:S2276"CReplace the call to "Thread.sleep(...)" with a call to "wait(...)".(„¼å°
+Z
+java:S2142"FEither re-interrupt this method or rethrow the "InterruptedException".(ä ¹€
+W
+java:S2276"CReplace the call to "Thread.sleep(...)" with a call to "wait(...)".(„¼å°
+Q	java:S106"9Replace this use of System.out or System.err by a logger.(Þýóéùÿÿÿÿ
+Q	java:S106"9Replace this use of System.out or System.err by a logger.(­—Ïèúÿÿÿÿ
+Q	java:S106"9Replace this use of System.out or System.err by a logger.(¨×õÊüÿÿÿÿ
+Q	java:S106"9Replace this use of System.out or System.err by a logger.(­—Ïèúÿÿÿÿ
+L	java:S106"9Replace this use of System.out or System.err by a logger.(Ù®¤ž
+Z
+java:S2142"FEither re-interrupt this method or rethrow the "InterruptedException".(ä ¹€
+Q	java:S106"9Replace this use of System.out or System.err by a logger.(Þýóéùÿÿÿÿ

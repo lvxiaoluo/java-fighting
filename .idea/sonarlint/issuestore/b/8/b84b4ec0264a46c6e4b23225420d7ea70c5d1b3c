@@ -1,0 +1,9 @@
+
+F
+java:S1168"+Return an empty collection instead of null.(¥¹ï8Â—©¦/
+\
+java:S1854"<Remove this useless assignment to local variable "solution".(Â ì›ıÿÿÿÿ8Â—©¦/
+C
+java:S1172"(Remove this unused method parameter "n".(µÇ£8Â—©¦/
+M
+java:S1481"-Remove this unused "solution" local variable.(Â ì›ıÿÿÿÿ8Â—©¦/

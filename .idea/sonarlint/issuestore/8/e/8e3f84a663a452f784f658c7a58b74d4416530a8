@@ -1,0 +1,9 @@
+
+C
+java:S1481$"-Remove this unused "solution" local variable.(Á¼ú–
+R
+java:S1854$"<Remove this useless assignment to local variable "solution".(Á¼ú–
+M
+java:S1172)"+Remove this unused method parameter "nums".(¬­½ûÿÿÿÿ8‘ì„Ž§/
+V
+java:S3400*"9Remove this method and declare a constant for this value.(”·³›8‘ì„Ž§/

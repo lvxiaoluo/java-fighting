@@ -1,0 +1,6 @@
+
+S	java:S106>"9Replace this use of System.out or System.err by a logger.(³š¾ðùÿÿÿÿ
+Q	java:S125."<This block of commented-out lines of code should be removed.(ÿ¾Ñ²
+;
+java:S1659<" Declare "p2" on a separate line.(ƒ›¨âøÿÿÿÿ
+S	java:S106M"9Replace this use of System.out or System.err by a logger.(°¯ÿÁüÿÿÿÿ

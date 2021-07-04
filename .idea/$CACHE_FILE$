@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleLocalSettings">
+    <option name="projectSyncType">
+      <map>
+        <entry key="$USER_HOME$/applicationTools/workApp/ideaInfo/ideaWorkSpaces/gradleProject/spring-framework" value="PREVIEW" />
+        <entry key="$USER_HOME$/applicationTools/workApp/ideaInfo/ideaWorkSpaces/gradleProject/spring/spring-framework" value="PREVIEW" />
+        <entry key="$USER_HOME$/applicationTools/workApp/ideaInfo/ideaWorkSpaces/gradleProject/zuul" value="PREVIEW" />
+        <entry key="$USER_HOME$/applicationTools/workApp/ideaInfo/ideaWorkSpaces/spring-framework" value="PREVIEW" />
+        <entry key="$USER_HOME$/applicationTools/workApp/ideaInfo/ideaWorkSpaces/spring-framework-master" value="PREVIEW" />
+      </map>
+    </option>
+  </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths />
+  </component>
+</project>

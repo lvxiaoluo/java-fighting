@@ -1,0 +1,7 @@
+
+S	java:S106"9Replace this use of System.out or System.err by a logger.(ýÀ«î8Þ¾ˆ§—/
+B
+java:S2189""Add an end condition to this loop.(˜ïˆžÿÿÿÿÿ8Ì‚§—/
+R	java:S106"9Replace this use of System.out or System.err by a logger.(Ž°®>8Ý¾Š§—/
+A
+java:S5164"!Call "remove()" on "threadLocal".(×©õ–ýÿÿÿÿ8Ý‘ÿ¦—/
