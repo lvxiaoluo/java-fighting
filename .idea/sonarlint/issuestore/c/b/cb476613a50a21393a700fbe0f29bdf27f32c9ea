@@ -1,10 +1,0 @@
-
-c
-java:S2142"FEither re-interrupt this method or rethrow the "InterruptedException".(ä ¹€8ÌÀ¶‘›/
-t
-java:S3077"WUse a thread-safe type; adding "volatile" is not enough to make this field thread-safe.(õ²ïÿ8»¦Ì˜“/
-e
-java:S2276"CReplace the call to "Thread.sleep(...)" with a call to "wait(...)".(íõ°Ãþÿÿÿÿ8ÌÀ¶‘›/
-p
-java:S3008"SRename this field "INSTANCE" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(õ²ïÿ8»¦Ì˜“/
-Z	java:S1063"9Replace this use of System.out or System.err by a logger.(‘­ó²ùÿÿÿÿ8ÌÀ¶‘›/
