@@ -37,7 +37,9 @@ public class P3LongestSubstringWithoutRepeatingCharacters {
         Solution solution = new P3LongestSubstringWithoutRepeatingCharacters().new Solution();
         //TO TEST
         int length = solution.lengthOfLongestSubstring("abcdddtesat");
+        String str = solution.lengthOfLongestSubStr("abcdddtesat");
         System.out.println(length);
+        System.out.println(str);
     }
 
     //leetcode submit region begin(Prohibit modification and deletion)
@@ -60,6 +62,7 @@ public class P3LongestSubstringWithoutRepeatingCharacters {
             int n = s.length(),ans = 0;
             Map<Integer, Integer> maxMap = new HashMap<>();
             Map<Character,Integer> map = new HashMap<>();
+
             for (int start=0,end = 0; end < n;end++){
                 char c = s.charAt(end);
                 if (map.containsKey(c)){
@@ -69,6 +72,8 @@ public class P3LongestSubstringWithoutRepeatingCharacters {
                 map.put(c, end+1);
                 maxMap.put(start, end);
             }
+
+
             int start=0,end =0;
             int diff = 0;
             Set<Map.Entry<Integer, Integer>> entries = maxMap.entrySet();
