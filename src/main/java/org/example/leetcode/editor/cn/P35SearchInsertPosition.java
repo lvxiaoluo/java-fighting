@@ -42,6 +42,7 @@ package org.example.leetcode.editor.cn;
 /**
   * @author lvle
   * @desc java:搜索插入位置
+ * 一个有序数组，查找第一个大于等于target的下标
   */
 public class P35SearchInsertPosition {
     public static void main(String[] args) {
