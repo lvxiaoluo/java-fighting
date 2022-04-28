@@ -52,7 +52,7 @@ public class P34FindFirstAndLastPositionOfElementInSortedArray {
         //TO TEST
     }
     //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {//TODO 存在问题重新理解
+class Solution {
 
     public int[] searchRange(int[] nums, int target) {
       int leftIdx = binarySearch(nums,target,true);
