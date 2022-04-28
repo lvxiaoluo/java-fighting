@@ -32,6 +32,7 @@ package org.example.leetcode.editor.cn;
 /**
   * @author lvle
   * @desc java:二分查找
+ *  704 、35 、69、367、441、34
   */
 public class P704BinarySearch {
     public static void main(String[] args) {
@@ -40,6 +41,7 @@ public class P704BinarySearch {
     }
     //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
+
     public int search(int[] nums, int target) {
         if (nums == null){
             return -1;
