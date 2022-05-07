@@ -44,6 +44,14 @@
       <version>30.1-jre</version>
     </dependency>
 
+    <!-- sentinel -->
+    <dependency>
+      <groupId>com.alibaba.csp</groupId>
+      <artifactId>sentinel-core</artifactId>
+      <version>1.7.1</version>
+    </dependency>
+
+
   </dependencies>
 
   <build>
