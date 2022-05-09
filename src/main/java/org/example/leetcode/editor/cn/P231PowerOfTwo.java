@@ -56,26 +56,28 @@
 
 
 package org.example.leetcode.editor.cn;
+
 /**
-  * @author lvle
-  * @desc java:2 的幂
-  */
+ * @author lvle
+ * @desc java:2 的幂
+ */
 public class P231PowerOfTwo {
     public static void main(String[] args) {
         Solution solution = new P231PowerOfTwo().new Solution();
         //TO TEST
     }
-    //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public boolean isPowerOfTwo(int n) {
-        return n > 0 && (n & (n-1)) ==0;
-    }
 
-    public boolean isPowerOfTwo1(int n){
-        int big = 1 <<30;
-        return n > 0 && big % n == 0;
+    //leetcode submit region begin(Prohibit modification and deletion)
+    class Solution {
+        public boolean isPowerOfTwo(int n) {
+            return n > 0 && (n & (n - 1)) == 0;
+        }
+
+        public boolean isPowerOfTwo1(int n) {
+            int big = 1 << 30;
+            return n > 0 && big % n == 0;
+        }
     }
-}
 //leetcode submit region end(Prohibit modification and deletion)
 
 }
