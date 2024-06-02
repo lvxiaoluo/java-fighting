@@ -54,27 +54,25 @@ import java.util.Map;
   * @author lvle
   * @desc java:两数之和
   */
-public class P1TwoSum {
+public class P1TwoSum_M2 {
     public static void main(String[] args) {
-        Solution solution = new P1TwoSum().new Solution();
+        Solution solution = new P1TwoSum_M2().new Solution();
         //TO TEST
         //时间复杂度 O(N) 空间复杂度O(N)
-        int[] resultArr = solution.twoSum(new int[]{3,3}, 6);
+        int[] resultArr = solution.twoSum(new int[]{2, 7, 11,}, 9);
         System.out.println(JSON.toJSONString(resultArr));
     }
     //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
-        //method1 借助map
-        public int[] twoSum(int[] nums, int target) {
-            Map<Integer, Integer> tempMap = new HashMap<>(16);
-            for (int i = 0; i < nums.length; i++) {
-                if (!tempMap.containsKey(nums[i])) {
-                    tempMap.put(nums[i], i);
-                }
-                if (tempMap.containsKey(target - nums[i]) && i != tempMap.get(target - nums[i])) {
-                    return new int[]{tempMap.get(target - nums[i]), i};
-                }
 
+        public int[] twoSum(int[] nums,int target){
+            int length = nums.length;
+            for (int i = 0; i < length; i++) {
+                for (int j = 0; j < length; j++) {
+                    if (nums[i]+nums[j] == target){
+                        return new int[]{i,j};
+                    }
+                }
             }
             return new int[]{};
         }
