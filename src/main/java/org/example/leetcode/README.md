@@ -13,7 +13,7 @@ public static void main(String[] args) {
 Solution solution = new P$!{question.frontendQuestionId}$!velocityTool.camelCaseName(${question.titleSlug})().new Solution();
 
     }
-    ${question.code}
+     ${question.code}
 }
 ```
 
