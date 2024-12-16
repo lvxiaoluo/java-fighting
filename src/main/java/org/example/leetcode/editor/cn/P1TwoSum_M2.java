@@ -46,14 +46,13 @@
 package org.example.leetcode.editor.cn;
 
 import com.alibaba.fastjson.JSON;
-
-import java.util.HashMap;
-import java.util.Map;
+import lombok.extern.slf4j.Slf4j;
 
 /**
   * @author lvle
   * @desc java:两数之和
   */
+@Slf4j
 public class P1TwoSum_M2 {
     public static void main(String[] args) {
         Solution solution = new P1TwoSum_M2().new Solution();

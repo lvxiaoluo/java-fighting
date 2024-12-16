@@ -46,6 +46,8 @@
 package org.example.leetcode.editor.cn;
 
 import com.alibaba.fastjson.JSON;
+import lombok.extern.slf4j.Slf4j;
+import org.junit.jupiter.api.Test;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -54,44 +56,67 @@ import java.util.Map;
   * @author lvle
   * @desc java:两数之和
   */
+
+@Slf4j
 public class P1TwoSum {
     public static void main(String[] args) {
         Solution solution = new P1TwoSum().new Solution();
         //TO TEST
         //时间复杂度 O(N) 空间复杂度O(N)
-        int[] resultArr = solution.twoSum(new int[]{3,3}, 6);
-        System.out.println(JSON.toJSONString(resultArr));
+        int target = 6;
+        int[] arr = new int[]{3,3};
+        int[] resultArr = solution.twoSum(arr, target);
+        log.info("resultArr :{}", JSON.toJSONString(resultArr));
     }
+
+    @Test
+    public void twoSumTest(){
+        Solution solution = new P1TwoSum().new Solution();
+        int[] nums = new int[]{2,7,11,15};
+        int target = 9;
+        int[] resultArr = solution.twoSum(nums, target);
+        log.info("runTwoSum target:{} resultArr:{}",target,resultArr);
+    }
+
     //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
-        //method1 借助map
-        public int[] twoSum(int[] nums, int target) {
-            Map<Integer, Integer> tempMap = new HashMap<>(16);
-            for (int i = 0; i < nums.length; i++) {
-                if (!tempMap.containsKey(nums[i])) {
-                    tempMap.put(nums[i], i);
-                }
-                if (tempMap.containsKey(target - nums[i]) && i != tempMap.get(target - nums[i])) {
-                    return new int[]{tempMap.get(target - nums[i]), i};
-                }
 
+        /**
+         * 求两数之和
+         * @param nums 数组
+         * @param target 目标值
+         * @return
+         * 时间复杂度 O(N)
+         * 空间复杂度 O(N)
+         */
+        public int[] twoSum(int[] nums,int target){
+            int length = nums.length;
+            Map<Integer,Integer> tempMap = new HashMap<>();
+            for (int i =0;i<length;i++){
+                if (!tempMap.containsKey(nums[i])){
+                    tempMap.put(nums[i],i);
+                }
+                if (tempMap.containsKey(target-nums[i]) && i != tempMap.get(target-nums[i])){
+                    return new int[]{tempMap.get(target-nums[i]),i};
+                }
             }
             return new int[]{};
         }
 
         //method2
         //两层for循环遍历即可
-//        public int[] twoSumM2(int[] nums, int target) {
-//            int n = nums.length;
-//            for (int i = 0; i < nums.length; i++) {
-//                for (int j = i + 1; j < n; j++) {
-//                    if (nums[i] + nums[j] == target) {
-//                        return new int[]{i, j};
-//                    }
-//                }
-//            }
-//            return new int[]{};
-//        }
+        //时间负责度
+        public int[] twoSumM2(int[] nums, int target) {
+            int n = nums.length;
+            for (int i = 0; i < nums.length; i++) {
+                for (int j = i + 1; j < n; j++) {
+                    if (nums[i] + nums[j] == target) {
+                        return new int[]{i, j};
+                    }
+                }
+            }
+            return new int[]{};
+        }
     }
 //leetcode submit region end(Prohibit modification and deletion)
 
