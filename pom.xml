@@ -37,6 +37,25 @@
       <version>1.2.47</version>
     </dependency>
 
+      <!-- 添加slf4j日志api -->
+      <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-api</artifactId>
+        <version>1.7.36</version>
+      </dependency>
+      <!-- 添加logback-classic依赖 -->
+      <dependency>
+        <groupId>ch.qos.logback</groupId>
+        <artifactId>logback-classic</artifactId>
+        <version>1.2.3</version>
+      </dependency>
+      <!-- 添加logback-core依赖 -->
+      <dependency>
+        <groupId>ch.qos.logback</groupId>
+        <artifactId>logback-core</artifactId>
+        <version>1.2.3</version>
+      </dependency>
+
     <!-- 布隆过滤器 -->
     <dependency>
       <groupId>com.google.guava</groupId>
@@ -50,10 +69,13 @@
       <artifactId>sentinel-core</artifactId>
       <version>1.7.1</version>
     </dependency>
-
-
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>RELEASE</version>
+      <scope>compile</scope>
+    </dependency>
   </dependencies>
-
   <build>
     <plugins>
       <plugin>
