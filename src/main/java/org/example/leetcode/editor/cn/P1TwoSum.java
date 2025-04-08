@@ -64,9 +64,12 @@ public class P1TwoSum {
         //TO TEST
         //时间复杂度 O(N) 空间复杂度O(N)
         int target = 6;
-        int[] arr = new int[]{3,3};
+//        int[] arr = new int[]{3,3};
+        int[] arr = new int[]{3,2,4};
         int[] resultArr = solution.twoSum(arr, target);
+        int[] ints = solution.twoSumTest(arr, target);
         log.info("resultArr :{}", JSON.toJSONString(resultArr));
+        log.info("ints :{}", JSON.toJSONString(ints));
     }
 
     @Test
@@ -116,6 +119,20 @@ public class P1TwoSum {
                 }
             }
             return new int[]{};
+        }
+
+        public int[] twoSumTest(int[] nums, int target) {
+            Map<Integer,Integer> map = new HashMap<>();
+            int length = nums.length;
+            for(int idx=0;idx <length;idx++){
+                if(!map.containsKey(nums[idx])){
+                    map.put(nums[idx],idx);
+                }
+                if(map.containsKey(target - nums[idx]) && idx != map.get(target - nums[idx])){
+                    return new int[]{idx,map.get(target-nums[idx])};
+                }
+            }
+            return  new int[]{};
         }
     }
 //leetcode submit region end(Prohibit modification and deletion)
