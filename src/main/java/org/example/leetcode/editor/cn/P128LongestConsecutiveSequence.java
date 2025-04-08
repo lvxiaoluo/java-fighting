@@ -53,7 +53,6 @@ public class P128LongestConsecutiveSequence{
      * 时间复杂度 O(n)
      */
     class Solution {
-
     public int longestConsecutive(int[] nums) {
         Set<Integer> setNum = new HashSet<>();
         for(int num : nums){
