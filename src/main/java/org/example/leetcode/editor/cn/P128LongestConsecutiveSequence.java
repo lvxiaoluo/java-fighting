@@ -37,15 +37,41 @@
 // Related Topics 并查集 数组 哈希表 👍 2457 👎 0
 
 package org.example.leetcode.editor.cn;
+
+import java.util.HashSet;
+import java.util.Set;
+
 public class P128LongestConsecutiveSequence{
     public static void main(String[] args) {
          Solution solution = new P128LongestConsecutiveSequence().new Solution();
          
     }
     //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
+
+    /**
+     * 最长连续序列
+     * 时间复杂度 O(n)
+     */
+    class Solution {
+
     public int longestConsecutive(int[] nums) {
-        
+        Set<Integer> setNum = new HashSet<>();
+        for(int num : nums){
+            setNum.add(num);
+        }
+        int longStreak = 0;
+        for(int num : nums){
+            if(!setNum.contains(num-1)){
+                int currentNum = num;
+                int current_streak = 1;
+                while(setNum.contains(currentNum+1)){
+                    currentNum = currentNum+1;
+                    current_streak = current_streak +1;
+                }
+                longStreak = Math.max(longStreak,current_streak);
+            }
+        }
+        return longStreak;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)

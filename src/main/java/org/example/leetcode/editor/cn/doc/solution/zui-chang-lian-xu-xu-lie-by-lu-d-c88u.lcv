@@ -1,0 +1,55 @@
+### 解题思路
+
+要求空间复杂度为o(n)，思路为用空间换时间，使用一个哈希表，哈希表中保存以nums[i]作为边界的最长连续子串的长度。
+若是hash表中已存在该元素就跳过。
+若是不存在：
+若该元素上下元素都存在，那么这会插在中间，所以要利用上下元素的value值找到上下边界，并将上下边界的value重置。若是只存在左元素，那么就要更新左边界的value，并以新加进去的元素作为右边界，只找到右边界时同理。
+
+### 代码
+
+* java
+
+```java
+class Solution {
+    public int longestConsecutive(int[] nums) {
+        HashMap<Integer,Integer> map = new HashMap<>();
+        //<key,value>:表示以key作为边界的最长连续长度为value
+        if(nums==null || nums.length == 0)return 0;
+        if(nums.length == 1)return 1;
+        int maxLength = 1;
+        for(int i = 0;i < nums.length;i++){
+            if(map.containsKey(nums[i])){//包含
+                continue;
+            }else{
+                //nums[i]原本不存在，nums[i]+1与nums[i]-1若是存在的话都是边界
+                if(map.containsKey(nums[i]-1) && map.containsKey(nums[i]+1)){
+                    int left = map.get(nums[i]-1);
+                    int right = map.get(nums[i]+1);
+                    int value = left + right + 1;
+                    map.put(nums[i],Math.max(left,right));
+                    map.put(nums[i]+right,value);
+                    map.put(nums[i]-left,value);
+                    maxLength = Math.max(maxLength,value);
+                    //更新连续串当中的边界的value值；
+                }else if(map.containsKey(nums[i]-1)){
+                    int left = map.get(nums[i]-1);
+                    int value = left + 1;
+                    map.put(nums[i],value);
+                    map.put(nums[i]-left,value);
+                    maxLength = Math.max(maxLength,value);
+                }else if(map.containsKey(nums[i]+1)){
+                    int right = map.get(nums[i]+1);
+                    int value = right + 1;
+                    map.put(nums[i],value);
+                    map.put(nums[i]+right,value);
+                    maxLength = Math.max(maxLength,value);
+                }else{
+                    map.put(nums[i],1);
+                }
+            }
+        }
+        return maxLength;
+    }
+}
+```
+

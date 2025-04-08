@@ -1,0 +1,35 @@
+### 解题思路
+
+此处撰写解题思路
+
+### 代码
+
+* java
+
+```java
+class Solution {
+    public int longestConsecutive(int[] nums) {
+        Set<Integer> numsSet = new HashSet();
+        for(int num:nums){
+           numsSet.add(num);
+        }
+
+        int res=0;
+        for(int num:nums){
+            //判断。只遍历去找子序列起点的元素，避免元素重复遍历
+            if(!numsSet.contains(num-1)){
+                  int amount=1;
+                  int currentNum = num;
+                  while(numsSet.contains(currentNum+1)){
+                       amount++;
+                       currentNum++;
+                  }
+                  res = Math.max(amount,res);
+            }
+        }
+
+        return res;
+    }
+}
+```
+
