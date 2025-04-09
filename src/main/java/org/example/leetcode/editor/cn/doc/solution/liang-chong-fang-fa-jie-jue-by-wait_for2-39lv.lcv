@@ -1,0 +1,101 @@
+### 代码
+
+* java
+
+```java
+class Solution 
+{
+    //方法一：根据比较两字符串是否是异或词的方法isAnagram，在s中截取所有的子串进行比较即可
+    //不断截取字符串，效率低
+    // public List<Integer> findAnagrams(String s, String p) 
+    // {
+    //     int slen=s.length();
+    //     int plen=p.length();
+    //     if(slen<plen)
+    //     {
+    //         return new ArrayList<Integer>();
+    //     }
+    //     List<Integer> res = new ArrayList<>();
+    //     for(int i=0;i<=slen-plen;i++)
+    //     {
+    //         String subs = s.substring(i,i+plen);//截取s的所有子串进行比较
+    //         if(isAnagram(subs,p))
+    //         {
+    //             res.add(i);
+    //         }
+    //     }
+    //     return res;
+    // }
+    //判断两字符串是否为异或词的方法
+    // public boolean isAnagram(String s,String t)
+    // {
+    //     if(s.length()!=t.length())
+    //     {
+    //         return false;
+    //     }
+    //     int[] temp = new int[26];
+    //     for(int i=0;i<s.length();i++)
+    //     {
+    //         int index=s.charAt(i)-'a';
+    //         temp[index]++;
+    //     }
+    //     for(int i=0;i<t.length();i++)
+    //     {
+    //         int index=t.charAt(i)-'a';
+    //         temp[index]--;
+    //     }
+    //     for(int v:temp)
+    //     {
+    //         if(v!=0)
+    //         {
+    //             return false;
+    //         }
+    //     }
+    //     return true;
+    // }
+
+    //方法二：维护两个频度数组，counts:统计s每个窗口内(与p同长度)各字母的出现次数
+    //                        countp:统计p中每个字母的出现次数
+    //而后，比较两个频度数组对应元素是否相等，若相等则将counts窗口左端点加入res
+    public List<Integer> findAnagrams(String s, String p) 
+    {
+        int slen=s.length();
+        int plen=p.length();
+        if(slen<plen)
+        {
+            return new ArrayList<Integer>();
+        }
+
+        List<Integer> res = new ArrayList<>();
+        int[] countp = new int[26];
+        int[] counts = new int[26];
+        for(int i=0;i<plen;i++)
+        {
+            int index=p.charAt(i)-'a';
+            countp[index]++;
+        }
+        for(int i=0;i<plen;i++)
+        {
+            int index=s.charAt(i)-'a';
+            counts[index]++;
+        }
+        if(Arrays.equals(counts,countp))//比较两个频度数组对应元素是否相等
+        {
+            res.add(0);//第一个窗口[0,plen]
+        }
+        //其他窗口:[i-plen+1,i] 
+        for(int i=plen;i<slen;i++)
+        {
+            //窗口移动，加上后面一个，去掉前面一个
+            counts[s.charAt(i)-'a']++;
+            counts[s.charAt(i-plen)-'a']--;
+            if(Arrays.equals(counts,countp))//比较两个频度数组对应元素是否相等
+            {
+                res.add(i-plen+1);
+            }
+        }
+        return res;
+    }
+}
+```
+
